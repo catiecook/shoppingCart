@@ -11,4 +11,14 @@ angular.module("meanTeaApp")
       // console.log(item);
       return item
     }
+
+    this.upDateCart = function(item, quantity) {
+
+    }
+
+    this.deleteItem = function(item) {
+
+    }
+
+    
   })
