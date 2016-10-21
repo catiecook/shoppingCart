@@ -2,13 +2,16 @@ angular.module("meanTeaApp")
 
 .service('teaService', function() {
   this.teaData = function teaData(){
+    // return new Promise(function(resolve, reject){
+    //
+    // })
     var allTea = [
           {
             "_id": "55c8ee82152165d244b98300",
             "name": "Bayard stew",
             "ingredients": "concentrated gluten, jewelry, dill, beetle nut, toast",
             "caffeineScale": 244,
-            "price": 1540,
+            "price": 15.40,
             "inStock": true,
             "rating": 1,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$",
@@ -21,7 +24,7 @@ angular.module("meanTeaApp")
             "name": "Incompactness syrup",
             "ingredients": "fennel, nutmeg leaves, parsley, cream of 'cream of cream', blarney",
             "caffeineScale": 49,
-            "price": 7348,
+            "price": 73.48,
             "inStock": true,
             "rating": 2,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32303_d?$cimg$",
@@ -33,7 +36,7 @@ angular.module("meanTeaApp")
             "name": "Flexner white tea",
             "ingredients": "hot sauce, iron, beetle nut, fresco, blarney, raw mashed potato",
             "caffeineScale": 38,
-            "price": 4991,
+            "price": 49.91,
             "inStock": true,
             "rating": 4,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/31358_d?$cimg$",
@@ -45,7 +48,7 @@ angular.module("meanTeaApp")
             "name": "Pressor leaf",
             "ingredients": "purina chow, flavorings, pepper, acorns, quality tallow, old sock, bay leaf",
             "caffeineScale": 153,
-            "price": 5496,
+            "price": 54.96,
             "inStock": true,
             "rating": 1,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/31358_d?$cimg$",
@@ -57,7 +60,7 @@ angular.module("meanTeaApp")
             "name": "Flexner veggie tea",
             "ingredients": "cream of tartar, eggplant, cake, deer antler",
             "caffeineScale": 181,
-            "price": 2445,
+            "price": 24.45,
             "inStock": true,
             "rating": 1,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32621_d?$cimg$",
@@ -69,7 +72,7 @@ angular.module("meanTeaApp")
             "name": "Topflighter malt",
             "ingredients": "botox, toast, cream of 'cream of 'cream of cream'', kitchen scraps, beef, aligator tongue, lawn clippings",
             "caffeineScale": 241,
-            "price": 4486,
+            "price": 44.86,
             "inStock": true,
             "rating": 3,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/31359_d?$cimg$",
@@ -81,7 +84,7 @@ angular.module("meanTeaApp")
             "name": "Cooking mix",
             "ingredients": "flavorings, roasted mushrooms, toast, tumeric",
             "caffeineScale": 230,
-            "price": 6973,
+            "price": 69.73,
             "inStock": true,
             "rating": 3,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32303_d?$cimg$",
@@ -93,7 +96,7 @@ angular.module("meanTeaApp")
             "name": "Cooking stew",
             "ingredients": "eggplant",
             "caffeineScale": 122,
-            "price": 6003,
+            "price": 60.03,
             "inStock": true,
             "rating": 2,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/31358_d?$cimg$",
@@ -105,7 +108,7 @@ angular.module("meanTeaApp")
             "name": "Prevenient herb tea",
             "ingredients": "cream of tartar, cream of cream, kitchen scraps, flavorings",
             "caffeineScale": 196,
-            "price": 1374,
+            "price": 13.74,
             "inStock": true,
             "rating": 3,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32174_d?$cimg$",
@@ -117,7 +120,7 @@ angular.module("meanTeaApp")
             "name": "Angular mix",
             "ingredients": "hot sauce, lawn clippings, fennel, parsley, quinine",
             "caffeineScale": 196,
-            "price": 4158,
+            "price": 41.58,
             "inStock": true,
             "rating": 2,
             "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32621_d?$cimg$",
@@ -128,9 +131,30 @@ angular.module("meanTeaApp")
     return allTea
   }
 
-  this.getCategories = function() {
-
-  
+  this.addItem = function(teaObject, quantity) {
+    var item = {
+      name: teaObject.name,
+      price: teaObject.price,
+      quantity: quantity
+    }
+    console.log(item);
+    return item
   }
 
-})
+  this.updateCart = function(item) {
+
+  }
+
+  // this.getCategories = function() {
+  //   var allData = teaData()
+  //   var categories = []
+  //
+  //   for(var i=0; i<allData.length; i++){
+  //     for(var j=0; j<allData[i].categories.length; j++){
+  //       categories.push(allData[i].categories[j])
+  //     }
+  //   }
+  //   return categories
+  // }
+
+}) //end service

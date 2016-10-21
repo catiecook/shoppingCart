@@ -3,7 +3,7 @@ angular.module('meanTeaApp', ['ngMaterial', 'ngAria', 'ngAnimate', 'ngRoute', 'a
 .config(function($routeProvider, $locationProvider){
   $routeProvider
     .when('/', {
-      templateUrl: '../shop.html',
+      templateUrl: 'shop/shop.html',
       controller: 'shopController'
     })
     $locationProvider.html5Mode(true);
