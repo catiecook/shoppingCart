@@ -1,0 +1,87 @@
+<div layout-margin>
+  <md-list-item layout-margin>
+    <small>Category</small>
+    <select>
+      <option ng-repeat="category in allData.categories | unique: category">
+        {{category}}
+      </option>
+    </select>
+    <md-input-container class="md-block">
+          <label>Search</label>
+          <input name="search" ng-model="searchTea" />
+      <md-button class="md-secondary md-primary md-raised">
+        Cart | (3) $87.43
+      </md-button>
+  </md-list-item>
+</div>
+
+<md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+
+        <md-card-title-text layout-margin>
+          <span class="md-headline">
+            Tea Name
+          </span>
+        </md-card-title-text>
+
+        <md-card-content layout="row" layout-align="space-between">
+          <div class="md-media-xl card-media">
+            <img src="http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$" alt="tea image">
+            </div>
+            <section layout="column">
+              <p>Price: $12.34</p>
+              <p>Caffeine: 65</p>
+              <p>Ingredients</p>
+              <p>Rating: 3</p>
+              <p>Item Sold Out!</p>
+              <p>Categories</p>
+            </section>
+            <md-card-actions layout="column">
+
+          <section>
+            Quantity:
+            <select ng-model="qualtity">
+              <option value="1">
+                1
+              </option>
+              <option value="2">
+                2
+              </option>
+              <option value="3">
+                3
+              </option>
+              <option value="4">
+                4
+              </option>
+              <option value="5">
+                5
+              </option>
+              <option value="6">
+                6
+              </option>
+              <option value="7">
+                7
+              </option>
+              <option value="8">
+                8
+              </option>
+              <option value="9">
+                9
+              </option>
+              <option value="10">
+                10
+              </option>
+            </select>
+              <md-button
+                class="md-icon-button"
+                aria-label="addCart"
+              >
+                <ng-md-icon
+                  icon="add_shopping_cart"
+                  style="fill: black"
+                >
+                </ng-md-icon>
+              </md-button>
+            </section>
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
