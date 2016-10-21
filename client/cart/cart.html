@@ -13,19 +13,41 @@
             </div>
             <section layout="column">
               <p>
-                <strong>Price:</strong>
-                  {{tea.price | currency}}
+                <strong>
+                  Price:
+                </strong>
+                {{tea.price | currency}}
               </p>
               <p>
-                <strong>Quantity:</strong>
-                {{tea.inStock}}
+                <strong>
+                  Quantity:
+                </strong>
+                <button ng-value="changeQuantity" ng-click="change">Update Quantity
+                </button>
+                <!-- hide if button is unclicked -->
+                <section
+                  ng-show="changeQuantity"
+                >
+                  <input
+                    type="number"
+                    ng-model="newQuantity"
+                  >
+                  <button
+                    ng-model="confirm"
+                    ng-click="updateItem(tea, newQuantity)"
+                >
+                    Confirm
+                  </button>
+                </section>
               </p>
+
               <ul ng-repeat="category in allTea.categories">
                 <li>
                   {{category}}
                 </li>
               </ul>
             </section>
+            <!-- change this to minus and plus -->
             <md-card-actions layout="column">
               <md-button
                 class="md-icon-button"

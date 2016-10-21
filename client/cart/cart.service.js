@@ -12,13 +12,14 @@ angular.module("meanTeaApp")
       return item
     }
 
-    this.upDateCart = function(item, quantity) {
-
+    this.updateItem = function(teaObject, newQuantity) {
+      item.quantity = newQuantity
+      return newQuantity
     }
 
     this.deleteItem = function(item) {
 
     }
 
-    
+
   })
