@@ -2,8 +2,8 @@
   <!--category drop down -->
   <md-list-item layout-margin>
     <small>Category</small>
-    <select>
-      <option ng-repeat="category in allData.categories | unique: category">
+    <select ng-model="selectCat">
+      <option ng-repeat="category in allData.categories | unique: category" value="{{category}}">
         {{category}}
       </option>
     </select>
@@ -16,7 +16,7 @@
   </md-list-item>
 
 <!-- Item cards -->
-  <md-card md-theme-watch ng-repeat="tea in allData">
+  <md-card md-theme-watch ng-repeat="tea in allData | filter: searchTea | filter: selectCat">
         <md-card-title-text layout-margin>
           <span class="md-headline">
             {{tea.name}}
@@ -48,7 +48,8 @@
                 <strong>Available?</strong>
                 {{tea.inStock}}
               </p>
-              <ul ng-repeat="category in allTea.categories">
+              <strong>Categories:</strong>
+              <ul ng-repeat="category in tea.categories">
                 <li>
                   {{category}}
                 </li>
@@ -57,7 +58,7 @@
             <md-card-actions layout="column">
           <!-- quantity selector -->
           <section>
-            Quantity:,
+            Quantity:
             <select ng-model="quantity">
               <option value="1">
                 1
