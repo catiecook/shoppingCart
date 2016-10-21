@@ -1,0 +1,45 @@
+<div layout-margin>
+
+  <md-card md-theme-watch ng-repeat="tea in allData">
+        <md-card-title-text layout-margin>
+          <span class="md-headline">
+            {{tea.name}}
+          </span>
+        </md-card-title-text>
+
+        <md-card-content layout="row" layout-align="space-between">
+          <div class="md-media-xl card-media">
+            <img src="{{tea.imageUrl}}" alt="tea image">
+            </div>
+            <section layout="column">
+              <p>
+                <strong>Price:</strong>
+                  {{tea.price | currency}}
+              </p>
+              <p>
+                <strong>Quantity:</strong>
+                {{tea.inStock}}
+              </p>
+              <ul ng-repeat="category in allTea.categories">
+                <li>
+                  {{category}}
+                </li>
+              </ul>
+            </section>
+            <md-card-actions layout="column">
+              <md-button
+                class="md-icon-button"
+                aria-label="upDate"
+              >
+                <ng-md-icon
+                  icon="add_shopping_cart"
+                  style="fill: black"
+                  ng-click=""
+                >
+                </ng-md-icon>
+              </md-button>
+            </section>
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
+</div>

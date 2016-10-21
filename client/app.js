@@ -7,4 +7,9 @@ angular.module('meanTeaApp', ['ngMaterial', 'ngAria', 'ngAnimate', 'ngRoute', 'a
       controller: 'shopController'
     })
     $locationProvider.html5Mode(true);
+    .when('/cart', {
+      templateUrl: 'cart/cart.html',
+      controller: 'cartController'
+    })
+    $locationProvider.html5Mode(true);
 })
